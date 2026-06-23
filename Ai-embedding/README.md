@@ -1,4 +1,4 @@
-# Ai-embedding
+# AI-Embedding
 
 수어(KSL) → 한국어 번역 파이프라인의 AI 모듈. 웹캠 키포인트를 임베딩하여 FAISS로 단어를
 검색(RAG)하고, sLLM이 자연스러운 한국어 문장으로 변환한다. 학습 시에만 GPU를 사용하고
