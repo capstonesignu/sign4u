@@ -1,0 +1,570 @@
+/* VideoCall.css — 카메라 최대 + 컨트롤 오른쪽 패널 */
+
+.vc-root {
+  /* index.css의 #root max-width: 402px 제한을 무시하고 전체 화면으로 표시 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background-color: #0F172A;
+  /* 100dvh: 모바일 주소창 영역 제외한 실제 표시 가능 높이 */
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #E2E8F0;
+}
+
+.vc-header {
+  padding: 10px 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.vc-header-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ── Main: 좌우 배치 ────────────────────────── */
+.vc-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── 왼쪽: 카메라만 (100% 채움) ──────────────── */
+.vc-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.vc-camera-area {
+  flex: 1;
+  position: relative;
+  background: #000;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.vc-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vc-main-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vc-main-video.mirrored {
+  transform: scaleX(-1);
+}
+
+.vc-landmark-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+
+/* ── Overlays on camera ──────────────────────── */
+.vc-waiting-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.vc-waiting-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.vc-waiting-sub {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.vc-rec-indicator {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%); /* 상단 중앙 — 좌상단 트리거 박스/우상단 PIP와 겹치지 않게 */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 24px;
+  animation: vc-pulse 1s infinite;
+  z-index: 6;
+}
+
+.vc-rec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+@keyframes vc-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.vc-status-badge {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%); /* 상단 중앙 — 좌상단 트리거 박스/우상단 PIP와 겹치지 않게 */
+  border-radius: 24px;
+  padding: 8px 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+/* ── 트리거 존 (좌상단 박스) ───────────────────── */
+.vc-trigger-zone {
+  position: absolute;
+  box-sizing: border-box; /* 테두리 포함 크기 = letterbox 존 rect와 일치 */
+  bottom: 16px;
+  right: 16px;
+  width: 80px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.45);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 30;
+  pointer-events: none; /* 제스처로만 동작, 클릭 불가 */
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.vc-trigger-zone.near {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+}
+
+.vc-trigger-zone.recording {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.22);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+}
+
+.vc-trigger-label {
+  letter-spacing: 0.5px;
+}
+
+.vc-trigger-gauge {
+  width: 80%;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.vc-trigger-gauge-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: #3b82f6;
+  transition: width 0.08s linear;
+}
+
+.vc-trigger-zone.recording .vc-trigger-gauge-fill {
+  background: #ef4444;
+}
+
+/* ── 시작 카운트다운 오버레이 (원형 프로그레스) ───── */
+.vc-countdown-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(15, 23, 42, 0.5);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.vc-countdown-ring-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.vc-countdown-ring {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg); /* 12시 방향에서 시작 */
+}
+
+.vc-countdown-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 8;
+}
+
+.vc-countdown-progress {
+  fill: none;
+  stroke: #22d3ee;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.08s linear;
+}
+
+.vc-countdown-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.vc-countdown-cap {
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.vc-pip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 180px;
+  height: 135px;
+  background-color: #0f172a;
+  border-radius: 12px;
+  border: 2px solid;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.vc-pip-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vc-pip-video.mirrored {
+  transform: scaleX(-1);
+}
+
+/* ── 오른쪽: 컨트롤 + 결과 패널 ─────────────── */
+.vc-right {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: #1E293B;
+  border-left: 1px solid #334155;
+}
+
+.vc-right-inner {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+/* ── 수어 시작/종료 버튼 ─────────────────────── */
+.vc-sign-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  background: #2563eb;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.vc-sign-btn:active {
+  transform: scale(0.98);
+}
+
+.vc-sign-btn:disabled {
+  background: #334155;
+  color: #64748B;
+  cursor: not-allowed;
+}
+
+.vc-sign-btn.recording {
+  background: #ef4444;
+  animation: vc-pulse 1s infinite;
+}
+
+/* ── Chat area ───────────────────────────────── */
+.vc-chat-area {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 4px;
+  min-height: 0;
+}
+.vc-chat-empty {
+  color: #475569;
+  font-size: 13px;
+  text-align: center;
+  margin: auto;
+}
+.vc-chat-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+}
+.vc-chat-msg.vc-chat-doctor {
+  align-self: flex-start;
+}
+.vc-chat-msg.vc-chat-patient {
+  align-self: flex-end;
+}
+.vc-chat-live {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  align-self: flex-start;
+  opacity: 0.6;
+}
+.vc-chat-label {
+  font-size: 11px;
+  color: #64748B;
+  margin-bottom: 3px;
+  padding: 0 4px;
+}
+.vc-chat-msg.vc-chat-patient .vc-chat-label {
+  align-self: flex-end;
+}
+.vc-chat-bubble {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 14px;
+  word-break: keep-all;
+}
+.vc-chat-msg.vc-chat-doctor .vc-chat-bubble {
+  background: #1E3A5F;
+  color: #E2E8F0;
+  border-bottom-left-radius: 4px;
+}
+.vc-chat-msg.vc-chat-patient .vc-chat-bubble {
+  background: #14532D;
+  color: #E2E8F0;
+  border-bottom-right-radius: 4px;
+}
+.vc-chat-bubble.live {
+  background: #1E2D40;
+  border: 1px dashed #334155;
+}
+
+/* ── Turn badge ──────────────────────────────── */
+.vc-turn-badge {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.vc-turn-badge.turn-doctor {
+  background: rgba(52, 168, 83, 0.15);
+  color: #34A853;
+  border: 1px solid rgba(52, 168, 83, 0.3);
+}
+.vc-turn-badge.turn-patient {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+/* ── Doctor turn status ──────────────────────── */
+.vc-turn-status {
+  font-size: 12px;
+  color: #94A3B8;
+  text-align: center;
+  padding: 6px 0;
+}
+
+/* ── Doctor done button ──────────────────────── */
+.vc-doctor-done-btn {
+  background: #34A853;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.vc-doctor-done-btn:hover { background: #2d9248; }
+.vc-doctor-done-btn:active { background: #256d3a; }
+
+/* ── Rec status ──────────────────────────────── */
+.vc-rec-status {
+  font-size: 12px;
+  color: #94A3B8;
+  text-align: center;
+}
+
+.vc-rec-status.recording { color: #ef4444; }
+.vc-rec-status.processing { color: #eab308; }
+.vc-rec-status.done { color: #22c55e; }
+.vc-rec-status.error { color: #ef4444; }
+
+/* ── Info row ────────────────────────────────── */
+.vc-info-row {
+  padding: 10px 14px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0F172A;
+}
+
+.vc-info-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #CBD5E1;
+}
+
+.vc-info-value {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ── Result boxes ────────────────────────────── */
+.vc-result-box {
+  padding: 14px;
+  border: 1px solid;
+  border-radius: 12px;
+  background: #0F172A;
+}
+
+.vc-result-badge {
+  border-radius: 20px;
+  padding: 5px 14px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.vc-result-text {
+  font-size: 19px;
+  color: #E2E8F0;
+  word-break: keep-all;
+  line-height: 1.7;
+  min-height: 24px;
+}
+
+/* ── 하단 컨트롤 (음소거, 종료, 카메라) ────────── */
+.vc-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid #334155;
+  flex-shrink: 0;
+}
+
+.vc-bottom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.vc-bottom-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── 반응형 ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .vc-main {
+    flex-direction: column;
+  }
+  /* 모바일: 카메라는 화면 절반만, 나머지는 컨트롤 패널 */
+  .vc-left {
+    flex: 0 0 45dvh;
+  }
+  .vc-right {
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+    border-left: none;
+    border-top: 1px solid #334155;
+    overflow: hidden;
+  }
+  .vc-right-inner {
+    padding: 12px;
+    gap: 8px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .vc-pip {
+    width: 100px;
+    height: 75px;
+  }
+  .vc-bottom-bar {
+    padding: 10px 16px;
+    /* iOS 홈 인디케이터 영역 회피 */
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+}

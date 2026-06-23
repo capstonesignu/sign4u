@@ -1,0 +1,39 @@
+{
+  "name": "web-backend",
+  "version": "1.0.0",
+  "description": "Backend-Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node --check src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sogang-Capstone-2026-1/web-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sogang-Capstone-2026-1/web-Backend/issues"
+  },
+  "homepage": "https://github.com/Sogang-Capstone-2026-1/web-Backend#readme",
+  "dependencies": {
+    "axios": "^1.15.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-kakao": "^1.0.1",
+    "passport-naver-v2": "^2.0.8",
+    "pg": "^8.20.0",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

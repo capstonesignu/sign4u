@@ -1,0 +1,2003 @@
+{
+  "total": 96,
+  "exact_match": 0.13541666666666666,
+  "avg_overlap": 0.6127728174603175,
+  "avg_sentence_bleu": 0.32512434557820535,
+  "avg_chrf_plusplus": 0.5092511074383451,
+  "avg_keyword_recall": 0.9293402777777772,
+  "negation_accuracy": 1.0,
+  "avg_hallucination_rate": 0.4370132639047113,
+  "avg_medical_entity_recall": 0.9670138888888888,
+  "error_analysis": {
+    "hallucination": 6,
+    "symptom_omission": 2
+  },
+  "rows": [
+    {
+      "id": "sample-001",
+      "words": [
+        "나",
+        "도서관",
+        "공부",
+        "하다"
+      ],
+      "prediction": "나는 도서관에서 공부하기 위해 한다.",
+      "reference": "나는 도서관에서 공부한다.",
+      "exact": false,
+      "overlap": 0.75,
+      "sentence_bleu": 0.17965205598154213,
+      "chrf_plusplus": 0.6498700798966766,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-002",
+      "words": [
+        "내일",
+        "비",
+        "오다",
+        "우산",
+        "필요"
+      ],
+      "prediction": "내일 비가 와서 우산이 필요하다.",
+      "reference": "내일 비가 오니 우산이 필요하다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.3799178428257963,
+      "chrf_plusplus": 0.6256451881451881,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-003",
+      "words": [
+        "친구",
+        "만나다",
+        "기쁘다"
+      ],
+      "prediction": "친구를 만나 기쁨을 느낀다.",
+      "reference": "친구를 만나서 기쁘다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.12703318703865366,
+      "chrf_plusplus": 0.3201736114420017,
+      "keyword_recall": 0.6666666666666666,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-004",
+      "words": [
+        "동생",
+        "학교",
+        "준비",
+        "하다"
+      ],
+      "prediction": "동생이 학교에서 준비를 한다.",
+      "reference": "동생이 학교 준비를 한다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.4272870063962342,
+      "chrf_plusplus": 0.6299137394886936,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-005",
+      "words": [
+        "아빠",
+        "회사",
+        "가다"
+      ],
+      "prediction": "아빠가 회사에 간다.",
+      "reference": "아빠가 회사에 간다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-006",
+      "words": [
+        "나",
+        "라면",
+        "끓이다",
+        "먹다"
+      ],
+      "prediction": "나는 라면을 끓여먹는다.",
+      "reference": "나는 라면을 끓여서 먹는다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.27534765745159184,
+      "chrf_plusplus": 0.5771445396272474,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-007",
+      "words": [
+        "너",
+        "어디",
+        "가다"
+      ],
+      "prediction": "너는 어디로 가나?",
+      "reference": "너는 어디에 가니?",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.1899589214128981,
+      "chrf_plusplus": 0.27648809523809526,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-008",
+      "words": [
+        "오늘",
+        "날씨",
+        "좋다"
+      ],
+      "prediction": "오늘 날씨가 좋다는 것을 알았다.",
+      "reference": "오늘 날씨가 좋다.",
+      "exact": false,
+      "overlap": 0.75,
+      "sentence_bleu": 0.17965205598154213,
+      "chrf_plusplus": 0.6420345964281008,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 9.090909090909092,
+      "medical_entity_recall": 1.0,
+      "errors": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "sample-010",
+      "words": [
+        "전화",
+        "받다",
+        "중요하다"
+      ],
+      "prediction": "전화를 받아서 중요해서 본다.",
+      "reference": "전화를 받는데 중요하다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.12703318703865366,
+      "chrf_plusplus": 0.24883989182691912,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-011",
+      "words": [
+        "나",
+        "머리",
+        "아프다",
+        "약",
+        "먹다"
+      ],
+      "prediction": "나는 머리가 아파서 약을 먹는다.",
+      "reference": "나는 머리가 아파서 약을 먹는다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-012",
+      "words": [
+        "무릎",
+        "아프다",
+        "계단",
+        "힘들다"
+      ],
+      "prediction": "무릎이 아파서 계단이 힘들다.",
+      "reference": "무릎이 아파서 계단이 힘들다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-013",
+      "words": [
+        "발",
+        "삐다",
+        "걷다",
+        "조심하다"
+      ],
+      "prediction": "발이삐면 걷기에조심해야 한다.",
+      "reference": "발을 삐어서 걷기를 조심한다.",
+      "exact": false,
+      "overlap": 0.2,
+      "sentence_bleu": 0.1244023474812678,
+      "chrf_plusplus": 0.16373554155609935,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-014",
+      "words": [
+        "물",
+        "마시다",
+        "목",
+        "마르다"
+      ],
+      "prediction": "물을 마시면 목이마르다.",
+      "reference": "목이 말라서 물을 마신다.",
+      "exact": false,
+      "overlap": 0.4,
+      "sentence_bleu": 0.1479401567477645,
+      "chrf_plusplus": 0.19581145366274466,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-015",
+      "words": [
+        "버스",
+        "타다",
+        "학교",
+        "가다"
+      ],
+      "prediction": "버스를 타고 학교에 가진다.",
+      "reference": "버스를 타고 학교에 간다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.4272870063962342,
+      "chrf_plusplus": 0.6601104675548083,
+      "keyword_recall": 0.75,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-016",
+      "words": [
+        "나",
+        "책",
+        "읽다",
+        "좋아하다"
+      ],
+      "prediction": "나는 책을 읽으며 좋아한다.",
+      "reference": "나는 책 읽는 것을 좋아한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.193576934939088,
+      "chrf_plusplus": 0.3568485136591611,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-017",
+      "words": [
+        "오늘",
+        "시험",
+        "있다",
+        "긴장"
+      ],
+      "prediction": "오늘 시험 때문에 긴장된다.",
+      "reference": "오늘 시험이 있어서 긴장된다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.23643540225079385,
+      "chrf_plusplus": 0.37873484296057475,
+      "keyword_recall": 0.75,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-018",
+      "words": [
+        "어제",
+        "영화",
+        "보다",
+        "재미있다"
+      ],
+      "prediction": "어제 영화 보니 재밌었다.",
+      "reference": "어제 영화를 봤는데 재미있었다.",
+      "exact": false,
+      "overlap": 0.4,
+      "sentence_bleu": 0.12703318703865366,
+      "chrf_plusplus": 0.22033086921598793,
+      "keyword_recall": 0.75,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-019",
+      "words": [
+        "나",
+        "한국어",
+        "배우다"
+      ],
+      "prediction": "나는 한국어를 배운다.",
+      "reference": "나는 한국어를 배운다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-020",
+      "words": [
+        "지하철",
+        "사람",
+        "많다"
+      ],
+      "prediction": "지하철에서 사람이 많다.",
+      "reference": "지하철에 사람이 많다.",
+      "exact": false,
+      "overlap": 0.75,
+      "sentence_bleu": 0.5946035575013604,
+      "chrf_plusplus": 0.6339366574039995,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-021",
+      "words": [
+        "나",
+        "피곤하다",
+        "자다"
+      ],
+      "prediction": "나는 피곤해서 잔다.",
+      "reference": "나는 피곤해서 잔다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-022",
+      "words": [
+        "선생님",
+        "설명",
+        "이해",
+        "못하다"
+      ],
+      "prediction": "선생님의 설명을 이해하지 못한다.",
+      "reference": "선생님의 설명을 이해하지 못한다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-023",
+      "words": [
+        "카페",
+        "커피",
+        "마시다"
+      ],
+      "prediction": "카페에서 커피를 마신다.",
+      "reference": "카페에서 커피를 마신다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-024",
+      "words": [
+        "동생",
+        "울다",
+        "슬프다"
+      ],
+      "prediction": "동생이 울면 슬프다고 말한다.",
+      "reference": "동생이 슬퍼서 운다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.12703318703865366,
+      "chrf_plusplus": 0.1949350930076644,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "sample-025",
+      "words": [
+        "주말",
+        "가족",
+        "여행",
+        "가다"
+      ],
+      "prediction": "주말에 가족과 여행을 간다.",
+      "reference": "주말에 가족과 여행을 간다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-001",
+      "words": [
+        "예약",
+        "오늘",
+        "가능",
+        "확인하다"
+      ],
+      "prediction": "예약일자를 확인하여 오늘 가능 여부를 본다.",
+      "reference": "오늘 예약이 가능한지 확인한다.",
+      "exact": false,
+      "overlap": 0.4,
+      "sentence_bleu": 0.07809849842300637,
+      "chrf_plusplus": 0.1742784694396943,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-002",
+      "words": [
+        "처음",
+        "병원",
+        "방문",
+        "접수",
+        "하다"
+      ],
+      "prediction": "처음 병원에서 방문하여 접수한다.",
+      "reference": "처음 병원에 방문하여 접수한다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.4272870063962342,
+      "chrf_plusplus": 0.7191504022081654,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-003",
+      "words": [
+        "이름",
+        "전화번호",
+        "적다",
+        "제출하다"
+      ],
+      "prediction": "이름과 전화번호를 적어 제출한다.",
+      "reference": "이름과 전화번호를 적어 제출한다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-004",
+      "words": [
+        "예약",
+        "변경",
+        "원하다",
+        "연락",
+        "하다"
+      ],
+      "prediction": "예약 변경을 원하지만 연락할 방법이 없었다.",
+      "reference": "예약 변경을 원하여 연락한다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.14535768424205484,
+      "chrf_plusplus": 0.43057624370978276,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-005",
+      "words": [
+        "진료",
+        "순서",
+        "기다리다",
+        "의사"
+      ],
+      "prediction": "의사가 진료 순서를 기다리고 환자에게 말한다.",
+      "reference": "의사 진료 순서를 기다린다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.14535768424205484,
+      "chrf_plusplus": 0.448846875901016,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-006",
+      "words": [
+        "등",
+        "아프다",
+        "숨",
+        "쉬다",
+        "힘들다"
+      ],
+      "prediction": "등이 아프면 숨 쉬기도 힘들다.",
+      "reference": "등이 아파서 숨 쉬기가 힘들다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.19304869754804482,
+      "chrf_plusplus": 0.33535839160839165,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-007",
+      "words": [
+        "기침",
+        "심하다",
+        "가래",
+        "나오다"
+      ],
+      "prediction": "기침과 가래가 나와서 심하다.",
+      "reference": "기침이 심하고 가래가 나온다.",
+      "exact": false,
+      "overlap": 0.4,
+      "sentence_bleu": 0.12703318703865366,
+      "chrf_plusplus": 0.2438811188811189,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-009",
+      "words": [
+        "몸",
+        "떨리다",
+        "춥다",
+        "덥다"
+      ],
+      "prediction": "몸이 떨리고 추운 것 같아 덥다고 느낀다.",
+      "reference": "몸이 떨리면서 춥고 덥다.",
+      "exact": false,
+      "overlap": 0.4,
+      "sentence_bleu": 0.06567274736060395,
+      "chrf_plusplus": 0.220560724452745,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-010",
+      "words": [
+        "감기",
+        "걸리다",
+        "약",
+        "필요하다"
+      ],
+      "prediction": "감기 때문에 약이 필요하다.",
+      "reference": "감기에 걸려서 약이 필요하다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.39763536438352515,
+      "chrf_plusplus": 0.493022815227824,
+      "keyword_recall": 0.75,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-012",
+      "words": [
+        "토하다",
+        "속",
+        "나쁘다",
+        "어지럽다"
+      ],
+      "prediction": "토하면 속이나쁘고 어지러우니 도와주세요.",
+      "reference": "토하고 속이 나쁘며 어지럽다.",
+      "exact": false,
+      "overlap": 0.2,
+      "sentence_bleu": 0.10682175159905848,
+      "chrf_plusplus": 0.19272793160066817,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-013",
+      "words": [
+        "음식",
+        "먹다",
+        "배",
+        "더부룩하다"
+      ],
+      "prediction": "음식을 먹어도 배가 더부룩해서 불편하다.",
+      "reference": "음식을 먹고 배가 더부룩하다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.10682175159905853,
+      "chrf_plusplus": 0.3752806623399589,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 0.5,
+      "errors": [
+        "symptom_omission"
+      ]
+    },
+    {
+      "id": "med-014",
+      "words": [
+        "속",
+        "쓰리다",
+        "위",
+        "아프다",
+        "검사하다"
+      ],
+      "prediction": "속쓰림과 위로 아픔 때문에 검사하기 위해 일한다.",
+      "reference": "속이 쓰리고 위가 아파서 검사한다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.05522397783539471,
+      "chrf_plusplus": 0.12246354349719338,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 6.25,
+      "medical_entity_recall": 0.6666666666666666,
+      "errors": [
+        "symptom_omission",
+        "hallucination"
+      ]
+    },
+    {
+      "id": "med-015",
+      "words": [
+        "입",
+        "맛",
+        "없다",
+        "물",
+        "먹다"
+      ],
+      "prediction": "입맛이 없어서 물을 먹는다.",
+      "reference": "입맛이 없어서 물만 먹는다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.30213753973567675,
+      "chrf_plusplus": 0.6188897907647907,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-017",
+      "words": [
+        "코",
+        "막히다",
+        "냄새",
+        "맡다",
+        "어렵다"
+      ],
+      "prediction": "코가 막혀서 냄새를 맡기 어려워진다.",
+      "reference": "코가 막혀서 냄새를 맡기가 어렵다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.32466791547509904,
+      "chrf_plusplus": 0.6040962055548955,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-018",
+      "words": [
+        "귀",
+        "아프다",
+        "소리",
+        "안 들리다"
+      ],
+      "prediction": "귀가 아파 소리가 안 들린다.",
+      "reference": "귀가 아파서 소리가 안 들린다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.537284965911771,
+      "chrf_plusplus": 0.6765186026005963,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-019",
+      "words": [
+        "기침",
+        "밤",
+        "심하다",
+        "잠",
+        "자다"
+      ],
+      "prediction": "기침이 밤에 심해서 잠을 자지 못한다.",
+      "reference": "기침이 밤에 심해서 잠을 못 잔다.",
+      "exact": false,
+      "overlap": 0.7142857142857143,
+      "sentence_bleu": 0.43472087194499137,
+      "chrf_plusplus": 0.6544757551266016,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-020",
+      "words": [
+        "가래",
+        "색",
+        "노랗다",
+        "피",
+        "섞이다"
+      ],
+      "prediction": "대변에서 색이 yellow되거나 red color with 혈액이 섞여 나오면 가래가 노랗다는 것을 말할 수 있다.",
+      "reference": "가래 색이 노랗고 피가 섞인다.",
+      "exact": false,
+      "overlap": 0.3333333333333333,
+      "sentence_bleu": 0.02908317710573757,
+      "chrf_plusplus": 0.11916255147548827,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 3.571428571428571,
+      "medical_entity_recall": 0.5,
+      "errors": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "med-021",
+      "words": [
+        "다리",
+        "다치다",
+        "붓다",
+        "걷다",
+        "힘들다"
+      ],
+      "prediction": "다리를 다치자 부어오르며 walk하기 힘들다고 말한다.",
+      "reference": "다리가 다치고 부어서 걷기가 힘들다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.06567274736060395,
+      "chrf_plusplus": 0.15731383009855626,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 0.6666666666666666,
+      "errors": []
+    },
+    {
+      "id": "med-022",
+      "words": [
+        "팔",
+        "골절",
+        "되다",
+        "깁스",
+        "하다"
+      ],
+      "prediction": "팔이 골절되면 깁스하기 위해 의사가 이야기한다.",
+      "reference": "팔이 골절되어 깁스한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.07809849842300637,
+      "chrf_plusplus": 0.30823564957576116,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-023",
+      "words": [
+        "허리",
+        "아프다",
+        "구부리다",
+        "펴다",
+        "어렵다"
+      ],
+      "prediction": "허리가 아파서 구부리고 펴지 어려워 일하기 어렵다.",
+      "reference": "허리가 아파서 구부리고 펴기가 어렵다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.25848657697858535,
+      "chrf_plusplus": 0.6550357169526255,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-024",
+      "words": [
+        "상처",
+        "피",
+        "나오다",
+        "소독",
+        "필요하다"
+      ],
+      "prediction": "상처에서 피나 나오니 소독이 필요하다.",
+      "reference": "상처에서 피가 나와서 소독이 필요하다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.32466791547509904,
+      "chrf_plusplus": 0.5390389328808446,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-025",
+      "words": [
+        "어깨",
+        "결리다",
+        "움직이다",
+        "아프다",
+        "참다"
+      ],
+      "prediction": "어깨가결리고움직이니까아프니참는다.",
+      "reference": "어깨가 결리고 움직이면 아파서 참는다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.06766764161830635,
+      "chrf_plusplus": 0.4399509895467659,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-026",
+      "words": [
+        "혈액",
+        "검사",
+        "바늘",
+        "찌르다",
+        "채혈하다"
+      ],
+      "prediction": "혈액 검사 바늘을 찔러 채혈하기 때문에 일마다 한다.",
+      "reference": "혈액 검사를 위해 바늘로 찔러 채혈한다.",
+      "exact": false,
+      "overlap": 0.42857142857142855,
+      "sentence_bleu": 0.06274655310994741,
+      "chrf_plusplus": 0.2628707561237655,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 6.666666666666667,
+      "medical_entity_recall": 1.0,
+      "errors": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "med-027",
+      "words": [
+        "소변",
+        "컵",
+        "받다",
+        "검사실",
+        "가다"
+      ],
+      "prediction": "소변 컵을 받아 검사실로 간다.",
+      "reference": "소변 컵을 받아 검사실에 간다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.3799178428257963,
+      "chrf_plusplus": 0.6965714840714842,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-028",
+      "words": [
+        "혈압",
+        "재다",
+        "수치",
+        "정상",
+        "확인하다"
+      ],
+      "prediction": "혈압을 재면 수치가 정상인지 확인한다.",
+      "reference": "혈압을 재고 수치가 정상인지 확인한다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.537284965911771,
+      "chrf_plusplus": 0.7453141833656539,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-029",
+      "words": [
+        "혈당",
+        "측정하다",
+        "식전",
+        "식후",
+        "비교하다"
+      ],
+      "prediction": "혈당 측정기를 착용하여 식전과 식후 혈당 차이를 기록한다.",
+      "reference": "혈당을 측정하여 식전과 식후를 비교한다.",
+      "exact": false,
+      "overlap": 0.3333333333333333,
+      "sentence_bleu": 0.05669791110976001,
+      "chrf_plusplus": 0.31783248303028216,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-030",
+      "words": [
+        "체온",
+        "재다",
+        "열",
+        "발열",
+        "확인하다"
+      ],
+      "prediction": "체온을 재면 열과 발열을 확인한다.",
+      "reference": "체온을 재서 발열을 확인한다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.32466791547509904,
+      "chrf_plusplus": 0.6261724392752462,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-031",
+      "words": [
+        "X-ray",
+        "찍다",
+        "결과",
+        "기다리다"
+      ],
+      "prediction": "X-ray를찍고결과를기다린다.",
+      "reference": "X-ray를 찍고 결과를 기다린다.",
+      "exact": false,
+      "overlap": 0.2,
+      "sentence_bleu": 0.1115650800742149,
+      "chrf_plusplus": 0.78222049689441,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-032",
+      "words": [
+        "초음파",
+        "검사",
+        "배",
+        "젤",
+        "바르다"
+      ],
+      "prediction": "초음파 검사를 위해 배에 젤을 바른다.",
+      "reference": "초음파 검사를 위해 배에 젤을 바른다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-033",
+      "words": [
+        "CT",
+        "찍다",
+        "조영제",
+        "주사",
+        "맞다"
+      ],
+      "prediction": "CT를 찍는데 조영제로 주사를 맞아본다.",
+      "reference": "CT를 찍기 위해 조영제 주사를 맞는다.",
+      "exact": false,
+      "overlap": 0.42857142857142855,
+      "sentence_bleu": 0.09042266054940777,
+      "chrf_plusplus": 0.2853920832711496,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-034",
+      "words": [
+        "MRI",
+        "움직이다",
+        "안 되다",
+        "소음",
+        "크다"
+      ],
+      "prediction": "MRI 움직임이 불가능해서 큰 소음이 크다.",
+      "reference": "MRI는 움직이면 안 되고 소음이 크다.",
+      "exact": false,
+      "overlap": 0.42857142857142855,
+      "sentence_bleu": 0.24446151121745052,
+      "chrf_plusplus": 0.3379607201395526,
+      "keyword_recall": 0.6,
+      "negation_ok": false,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-035",
+      "words": [
+        "뼈",
+        "사진",
+        "찍다",
+        "설명",
+        "듣다"
+      ],
+      "prediction": "뼈 사진을 찍었는데 의사가 어떻게 해석할지 설명을 듣는다.",
+      "reference": "뼈 사진을 찍고 설명을 듣는다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.2231618068926665,
+      "chrf_plusplus": 0.5517615781694535,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-036",
+      "words": [
+        "링거",
+        "맞다",
+        "팔",
+        "저리다",
+        "불편하다"
+      ],
+      "prediction": "링거셋트를 맞아 팔이 저리고 불편하니 도와주세요.",
+      "reference": "링거를 맞고 팔이 저려서 불편하다.",
+      "exact": false,
+      "overlap": 0.3333333333333333,
+      "sentence_bleu": 0.07809849842300637,
+      "chrf_plusplus": 0.19821685098043748,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-037",
+      "words": [
+        "수액",
+        "맞다",
+        "팔",
+        "바늘",
+        "꽂다"
+      ],
+      "prediction": "sllm에서 환자 상태 확인 뒤 수액 처방받아 팔에 바늘 꽂았다고 한다.",
+      "reference": "수액을 맞기 위해 팔에 바늘을 꽂는다.",
+      "exact": false,
+      "overlap": 0.2857142857142857,
+      "sentence_bleu": 0.0402724819242185,
+      "chrf_plusplus": 0.14908832788727946,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 5.263157894736842,
+      "medical_entity_recall": 1.0,
+      "errors": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "med-038",
+      "words": [
+        "물리치료",
+        "받다",
+        "매일",
+        "병원",
+        "가다"
+      ],
+      "prediction": "물리치료를 받아 매일 병원에 간다.",
+      "reference": "물리치료를 받기 위해 매일 병원에 간다.",
+      "exact": false,
+      "overlap": 0.7142857142857143,
+      "sentence_bleu": 0.45480190470279064,
+      "chrf_plusplus": 0.6199487414050615,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-039",
+      "words": [
+        "상처",
+        "소독하다",
+        "붕대",
+        "감다",
+        "교체하다"
+      ],
+      "prediction": "상처를 소독하여 붕대를 감다가 교체한다.",
+      "reference": "상처를 소독하고 붕대를 감아 교체한다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.19304869754804482,
+      "chrf_plusplus": 0.47547969493132924,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-040",
+      "words": [
+        "내시경",
+        "검사",
+        "전",
+        "금식",
+        "필요하다"
+      ],
+      "prediction": "내시경 검사 전 금식이 필요하다.",
+      "reference": "내시경 검사 전에 금식이 필요하다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.3799178428257963,
+      "chrf_plusplus": 0.709121617498674,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-041",
+      "words": [
+        "소화제",
+        "먹다",
+        "식후",
+        "바로"
+      ],
+      "prediction": "소화제를 식사 직후 바로 먹는다.",
+      "reference": "소화제를 식후 바로 먹는다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.32466791547509904,
+      "chrf_plusplus": 0.655630110367357,
+      "keyword_recall": 0.75,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 0.5,
+      "errors": []
+    },
+    {
+      "id": "med-042",
+      "words": [
+        "식사",
+        "전",
+        "약",
+        "먹다",
+        "물"
+      ],
+      "prediction": "식사 전과 약을 먹으며 물을 준다.",
+      "reference": "식사 전에 약을 물로 먹는다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.08643019616048525,
+      "chrf_plusplus": 0.2070908161827672,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-043",
+      "words": [
+        "식후",
+        "삼십",
+        "분",
+        "약",
+        "먹다"
+      ],
+      "prediction": "식후 삼십분 안에 약을 먹어야 한다.",
+      "reference": "식후 삼십 분에 약을 먹는다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.08643019616048525,
+      "chrf_plusplus": 0.36849890167194826,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-044",
+      "words": [
+        "약",
+        "용량",
+        "지키다",
+        "먹다"
+      ],
+      "prediction": "약 용량을 지켜먹는다.",
+      "reference": "약 용량을 지켜서 먹는다.",
+      "exact": false,
+      "overlap": 0.6,
+      "sentence_bleu": 0.27534765745159184,
+      "chrf_plusplus": 0.5366959018452256,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-045",
+      "words": [
+        "약",
+        "시간",
+        "알리다",
+        "알람",
+        "설정하다"
+      ],
+      "prediction": "약시간알리며알람설정한다.",
+      "reference": "약 시간을 알리기 위해 알람을 설정한다.",
+      "exact": false,
+      "overlap": 0.14285714285714285,
+      "sentence_bleu": 0.04104249931194939,
+      "chrf_plusplus": 0.2459327289818148,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-046",
+      "words": [
+        "처방전",
+        "약국",
+        "내다",
+        "약",
+        "받다"
+      ],
+      "prediction": "처방전을 약국에서 내러 받아 약을 받는다.",
+      "reference": "처방전을 약국에 내고 약을 받는다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.26269098944241587,
+      "chrf_plusplus": 0.5765897566798408,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-047",
+      "words": [
+        "약",
+        "부작용",
+        "졸리다",
+        "운전",
+        "조심하다"
+      ],
+      "prediction": "약 부작용 때문에 졸리고 운전할 때 주의해야 한다.",
+      "reference": "약 부작용으로 졸려서 운전을 조심한다.",
+      "exact": false,
+      "overlap": 0.3333333333333333,
+      "sentence_bleu": 0.05669791110976001,
+      "chrf_plusplus": 0.18511932358491925,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-048",
+      "words": [
+        "약",
+        "알레르기",
+        "있다",
+        "의사",
+        "말하다"
+      ],
+      "prediction": "의사가 약 알레르기가 있다고 이야기한다.",
+      "reference": "약 알레르기가 있어서 의사에게 말한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.17965205598154213,
+      "chrf_plusplus": 0.37765560885955046,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-049",
+      "words": [
+        "가루약",
+        "물",
+        "타다",
+        "삼키다",
+        "어렵다"
+      ],
+      "prediction": "가루약과 물타먹으며 삼키지 못해 어려움을 겪는다.",
+      "reference": "가루약을 물에 타서 삼키기가 어렵다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.06567274736060395,
+      "chrf_plusplus": 0.13928995045555692,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-050",
+      "words": [
+        "연고",
+        "바르다",
+        "하루",
+        "두",
+        "번"
+      ],
+      "prediction": "연고로 바를 때마다 하루에 두 번 바른다.",
+      "reference": "연고를 하루에 두 번 바른다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.5169731539571706,
+      "chrf_plusplus": 0.6866127760495617,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-051",
+      "words": [
+        "입원",
+        "필요하다",
+        "병실",
+        "배정",
+        "받다"
+      ],
+      "prediction": "입원이 필요해서 병실 배정받는다.",
+      "reference": "입원이 필요하여 병실 배정을 받는다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.1151015341649912,
+      "chrf_plusplus": 0.36512644731315824,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-052",
+      "words": [
+        "입원",
+        "서류",
+        "작성하다",
+        "제출하다",
+        "확인하다"
+      ],
+      "prediction": "입원 서류를 작성하여 제출하고 확인받는다.",
+      "reference": "입원 서류를 작성하여 제출하고 확인한다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.537284965911771,
+      "chrf_plusplus": 0.7955522250653145,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-053",
+      "words": [
+        "병원",
+        "옷",
+        "갈아입다",
+        "물건",
+        "정리하다"
+      ],
+      "prediction": "병원에서 옷을 갈아 입으며 물건을 정리한다.",
+      "reference": "병원 옷으로 갈아입고 물건을 정리한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.24446151121745052,
+      "chrf_plusplus": 0.46035544994533384,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-054",
+      "words": [
+        "간호사",
+        "호출",
+        "방법",
+        "설명",
+        "듣다"
+      ],
+      "prediction": "간호사호출방법설명듣는다.",
+      "reference": "간호사에게 호출 방법을 설명 듣는다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.06766764161830635,
+      "chrf_plusplus": 0.3582780585054885,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-055",
+      "words": [
+        "입원",
+        "기간",
+        "얼마",
+        "걸리다",
+        "물어보다"
+      ],
+      "prediction": "입원 기간이 얼마나 걸리냐 물어보았다.",
+      "reference": "입원 기간이 얼마나 걸리는지 물어본다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.32466791547509904,
+      "chrf_plusplus": 0.5611543174962293,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-056",
+      "words": [
+        "수술",
+        "전",
+        "금식",
+        "시간",
+        "지키다"
+      ],
+      "prediction": "수술 전후 금식 시간을 지킨다.",
+      "reference": "수술 전에 금식 시간을 지킨다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.537284965911771,
+      "chrf_plusplus": 0.6965714840714842,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-057",
+      "words": [
+        "수술",
+        "동의서",
+        "보호자",
+        "서명",
+        "필요하다"
+      ],
+      "prediction": "수술 동의서로 보호자 서명이 필요하다.",
+      "reference": "수술 동의서에 보호자 서명이 필요하다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.537284965911771,
+      "chrf_plusplus": 0.7348975166989873,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-058",
+      "words": [
+        "마취",
+        "주사",
+        "맞다",
+        "잠",
+        "들다"
+      ],
+      "prediction": "마취 주사를 맞고도 잠 들어진다.",
+      "reference": "마취 주사를 맞고 잠이 든다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.17965205598154213,
+      "chrf_plusplus": 0.4572600501064386,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-059",
+      "words": [
+        "수술",
+        "후",
+        "회복실",
+        "통증",
+        "심하다"
+      ],
+      "prediction": "수술 후 회복실은 통증이 심하다.",
+      "reference": "수술 후 회복실에서 통증이 심하다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.3799178428257963,
+      "chrf_plusplus": 0.6469214443112989,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-060",
+      "words": [
+        "수술",
+        "부위",
+        "붓다",
+        "얼음",
+        "찜질하다"
+      ],
+      "prediction": "수술 부위가 부어오르면 얼음찜질하기 위해 의사 앞에서 이야기한다.",
+      "reference": "수술 부위가 부어서 얼음 찜질한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.10552670315936317,
+      "chrf_plusplus": 0.42010244229097155,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 0.0,
+      "errors": []
+    },
+    {
+      "id": "med-061",
+      "words": [
+        "퇴원",
+        "날짜",
+        "의사",
+        "물어보다",
+        "결정하다"
+      ],
+      "prediction": "퇴원 날짜를 의사에게 물어본다.",
+      "reference": "의사에게 퇴원 날짜를 물어보고 결정한다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.20801195378010617,
+      "chrf_plusplus": 0.35325625998014654,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-062",
+      "words": [
+        "퇴원",
+        "후",
+        "진단서",
+        "발급",
+        "요청하다"
+      ],
+      "prediction": "퇴원 후 진단서 발급을 요청한다.",
+      "reference": "퇴원 후 진단서 발급을 요청한다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-063",
+      "words": [
+        "퇴원",
+        "후",
+        "약",
+        "복용법",
+        "듣다"
+      ],
+      "prediction": "퇴원 후 약 복용법을 듣는다.",
+      "reference": "퇴원 후 약 복용법을 듣는다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 11.11111111111111,
+      "medical_entity_recall": 1.0,
+      "errors": [
+        "hallucination"
+      ]
+    },
+    {
+      "id": "med-064",
+      "words": [
+        "퇴원",
+        "후",
+        "재방문",
+        "예약",
+        "날짜"
+      ],
+      "prediction": "퇴원 후 재방문과 예약 날짜를 확인한다.",
+      "reference": "퇴원 후 재방문 날짜를 예약한다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.15619699684601282,
+      "chrf_plusplus": 0.4449984187391719,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-065",
+      "words": [
+        "입원비",
+        "정산",
+        "카드",
+        "현금",
+        "내다"
+      ],
+      "prediction": "대여원에서 입원비카드현금내다.",
+      "reference": "입원비를 정산하고 카드나 현금으로 낸다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.10122592925934278,
+      "chrf_plusplus": 0.13468964492823662,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-066",
+      "words": [
+        "도움",
+        "필요하다",
+        "간호사",
+        "부르다"
+      ],
+      "prediction": "도움이 필요해서 간호사를 부른다.",
+      "reference": "도움이 필요하여 간호사를 부른다.",
+      "exact": false,
+      "overlap": 0.8,
+      "sentence_bleu": 0.4272870063962342,
+      "chrf_plusplus": 0.622820929070929,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-067",
+      "words": [
+        "물",
+        "마시다",
+        "괜찮다",
+        "묻다",
+        "간호사"
+      ],
+      "prediction": "간호사가 물의 섭취 여부를 확인하니 괜찮다고 답한다.",
+      "reference": "물을 마셔도 괜찮은지 간호사에게 묻는다.",
+      "exact": false,
+      "overlap": 0.16666666666666666,
+      "sentence_bleu": 0.05522397783539471,
+      "chrf_plusplus": 0.10729860237953863,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-068",
+      "words": [
+        "화장실",
+        "가다",
+        "혼자",
+        "어렵다",
+        "부탁하다"
+      ],
+      "prediction": "화장실 가는 것이 혼자 어려워 부탁받는다.",
+      "reference": "화장실 가기가 혼자 어려워 부탁한다.",
+      "exact": false,
+      "overlap": 0.6666666666666666,
+      "sentence_bleu": 0.15619699684601282,
+      "chrf_plusplus": 0.44454136378219916,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-069",
+      "words": [
+        "춥다",
+        "덥다",
+        "에어컨",
+        "온도",
+        "조절하다"
+      ],
+      "prediction": "춥지도 않고 덥기도 해서 에어컨 온도를 조절해야 한다.",
+      "reference": "춥고 더워서 에어컨 온도를 조절한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.10552670315936317,
+      "chrf_plusplus": 0.46007011716005886,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-070",
+      "words": [
+        "음식",
+        "싱겁다",
+        "소금",
+        "추가",
+        "요청하다"
+      ],
+      "prediction": "음식이 짜다고 소금을 추가할 것을 요청한다.",
+      "reference": "음식이 싱거워서 소금 추가를 요청한다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.14535768424205484,
+      "chrf_plusplus": 0.2908864672074379,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-071",
+      "words": [
+        "통증",
+        "심하다",
+        "진통제",
+        "달라고",
+        "말하다"
+      ],
+      "prediction": "통증이 심해서 진통제를 달라고 말한다.",
+      "reference": "통증이 심해서 진통제를 달라고 말한다.",
+      "exact": true,
+      "overlap": 1.0,
+      "sentence_bleu": 1.0000000000000004,
+      "chrf_plusplus": 1.0,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-072",
+      "words": [
+        "감사",
+        "표현",
+        "간호사",
+        "악수",
+        "하다"
+      ],
+      "prediction": "감사표현을 간호사에게 전달하여 악수를 한다.",
+      "reference": "감사를 표현하며 간호사와 악수한다.",
+      "exact": false,
+      "overlap": 0.2,
+      "sentence_bleu": 0.08116697886877475,
+      "chrf_plusplus": 0.20048818882904607,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-073",
+      "words": [
+        "궁금하다",
+        "질문",
+        "종이",
+        "적다",
+        "보여주다"
+      ],
+      "prediction": "궁금함을 알려 종이에 기록된 것을 보여준다.",
+      "reference": "궁금한 질문을 종이에 적어 보여준다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.14535768424205484,
+      "chrf_plusplus": 0.2860078977807241,
+      "keyword_recall": 0.6,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-074",
+      "words": [
+        "수어",
+        "통역사",
+        "연락",
+        "필요하다",
+        "부탁하다"
+      ],
+      "prediction": "대역에서 수어 통역사 연락처가 필요하여 부탁한다.",
+      "reference": "수어 통역사 연락이 필요하여 부탁한다.",
+      "exact": false,
+      "overlap": 0.8333333333333334,
+      "sentence_bleu": 0.30739407647563216,
+      "chrf_plusplus": 0.6936554610891582,
+      "keyword_recall": 1.0,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    },
+    {
+      "id": "med-075",
+      "words": [
+        "천천히",
+        "설명하다",
+        "글씨",
+        "쓰다",
+        "읽다"
+      ],
+      "prediction": "천천히 설명하면서도 글자를 써서 읽어야 한다.",
+      "reference": "천천히 설명하고 글씨로 써서 읽는다.",
+      "exact": false,
+      "overlap": 0.5,
+      "sentence_bleu": 0.08643019616048525,
+      "chrf_plusplus": 0.31268781105002025,
+      "keyword_recall": 0.8,
+      "negation_ok": true,
+      "hallucination_rate": 0.0,
+      "medical_entity_recall": 1.0,
+      "errors": []
+    }
+  ]
+}

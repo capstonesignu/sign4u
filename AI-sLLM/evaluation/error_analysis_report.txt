@@ -1,0 +1,157 @@
+=================================================================
+AI-sLLM Error Analysis Report
+=================================================================
+
+총 샘플: 96
+완전 일치: 13/96 (13.5%)
+오류 샘플: 83/96 (86.5%)
+
+-----------------------------------------------------------------
+오류 원인 분류 (Error Source Breakdown)
+-----------------------------------------------------------------
+  모델 원인 (Model):     80 (96.4%)
+  파이프라인 (Cleanup):   2 (2.4%)
+  복합 원인 (Both):      1 (1.2%)
+
+-----------------------------------------------------------------
+오류 유형별 빈도 (Error Category Frequency)
+-----------------------------------------------------------------
+  [모델 오류 / Model Errors]
+    因果推理错误 (Causal Reasoning): 3 (3.6%)
+    叙述扩展 (Narrative Expansion): 11 (13.3%)
+    句法组合不稳定 (Syntax Composition): 4 (4.8%)
+    英语泄漏 (English Leak): 2 (2.4%)
+    미분류 모델 오류 (Unclassified): 62 (74.7%)
+
+  [파이프라인 오류 / Cleanup Errors]
+    时态修改副作用 (Tense Side-Effect): 2 (2.4%)
+    Cleanup 回退触发 (Rollback Triggered): 1 (1.2%)
+
+-----------------------------------------------------------------
+카테고리별 오류 분포 (By Sample Category)
+-----------------------------------------------------------------
+  [의료 (Medical)] 4/72 일치 (5.6%)
+    unclassified_model: 51
+    叙述扩展 (Narrative Expansion): 10
+    句法组合不稳定 (Syntax Composition): 4
+    时态修改副作用 (Tense Side-Effect): 2
+    英语泄漏 (English Leak): 2
+
+  [일상 (Daily)] 9/24 일치 (37.5%)
+    unclassified_model: 11
+    因果推理错误 (Causal Reasoning): 2
+    叙述扩展 (Narrative Expansion): 1
+    Cleanup 回退触发 (Rollback Triggered): 1
+
+-----------------------------------------------------------------
+파이프라인 Failure Type 통계 (Pipeline FailureType Stats)
+-----------------------------------------------------------------
+  keyword_omission: 76
+  final_kw_missing: 52
+  hallucination_adv: 15
+  hallucination_med: 13
+  over_generation: 6
+  final_neg_inconsistent: 1
+  negation_flip: 1
+
+-----------------------------------------------------------------
+Semantic Cleanup 변경 통계 (Cleanup Change Stats)
+-----------------------------------------------------------------
+  tense_rewrite: 18
+  english_replace: 2
+  hallucination_remove: 2
+  rollback: 1
+
+-----------------------------------------------------------------
+주요 오류 샘플 (Top Error Samples)
+-----------------------------------------------------------------
+  [sample-039] (both) narrative_expansion, syntax_composition, tense_side_effect
+    입력: 귀 / 아프다 / 소리 / 안 들리다
+    참고: 귀가 아파서 소리가 안 들린다.
+    출력: 귀가아프고소리안들리니도움받아달라고말한다.
+    → Added verbs: ['말한다']
+    → Syntax issues: ['spacing: 귀가아프고소리안들리니도움받아달라고말한다']
+
+  [sample-001] (model) unclassified_model
+    입력: 나 / 도서관 / 공부 / 하다
+    참고: 나는 도서관에서 공부한다.
+    출력: 나는 도서관에서 공부하기 위해 한다.
+
+  [sample-002] (model) unclassified_model
+    입력: 내일 / 비 / 오다 / 우산 / 필요
+    참고: 내일 비가 오니 우산이 필요하다.
+    출력: 내일 비가 와서 우산이 필요하다.
+
+  [sample-003] (model) unclassified_model
+    입력: 친구 / 만나다 / 기쁘다
+    참고: 친구를 만나서 기쁘다.
+    출력: 친구를 만나니 기쁘다.
+
+  [sample-004] (model) unclassified_model
+    입력: 동생 / 학교 / 준비 / 하다
+    참고: 동생이 학교 준비를 한다.
+    출력: 동생이 학교에서 준비를 한다.
+
+  [sample-006] (model) unclassified_model
+    입력: 나 / 라면 / 끓이다 / 먹다
+    참고: 나는 라면을 끓여서 먹는다.
+    출력: 나는 라면을 끓여먹는다.
+
+  [sample-007] (model) unclassified_model
+    입력: 너 / 어디 / 가다
+    참고: 너는 어디에 가니?
+    출력: 너는 어디로 가나?
+
+  [sample-008] (model) narrative_expansion
+    입력: 오늘 / 날씨 / 좋다
+    참고: 오늘 날씨가 좋다.
+    출력: 오늘 날씨가 좋다는 것을 알았다.
+    → Added verbs: ['알았다']
+
+  [sample-011] (model) unclassified_model
+    입력: 무릎 / 아프다 / 계단 / 힘들다
+    참고: 무릎이 아파서 계단이 힘들다.
+    출력: 무릎이 아프면 계단 오르내릴 때 힘들다.
+
+  [sample-012] (model) causal_reasoning
+    입력: 발 / 삐다 / 걷다 / 조심하다
+    참고: 발을 삐어서 걷기를 조심한다.
+    출력: 발이삐면 걸을 때 조심해야 한다.
+    → Word order suggests causal reversal
+
+  [sample-013] (model) causal_reasoning
+    입력: 물 / 마시다 / 목 / 마르다
+    참고: 목이 말라서 물을 마신다.
+    출력: 물을 마시면 목이마르다.
+    → Word order suggests causal reversal
+
+  [sample-015] (model) unclassified_model
+    입력: 나 / 책 / 읽다 / 좋아하다
+    참고: 나는 책 읽는 것을 좋아한다.
+    출력: 나는 책을 읽으며 좋아한다.
+
+  [sample-016] (model) unclassified_model
+    입력: 오늘 / 시험 / 있다 / 긴장
+    참고: 오늘 시험이 있어서 긴장된다.
+    출력: 오늘 시험 때문에 긴장된다.
+
+  [sample-017] (model) unclassified_model
+    입력: 어제 / 영화 / 보다 / 재미있다
+    참고: 어제 영화를 봤는데 재미있었다.
+    출력: 어제 영화보다 재미있었던 일은 기억 못한다.
+
+  [sample-019] (cleanup) cleanup_rollback
+    입력: 지하철 / 사람 / 많다
+    참고: 지하철에 사람이 많다.
+    출력: 지하철에서 사람이 많이 안다.
+    → Rollback: lost keywords: 많다
+
+=================================================================
+결론 (Conclusions)
+=================================================================
+  모델 관련 오류: 81/83 (97.6%)
+  파이프라인 관련 오류: 3/83 (3.6%)
+
+  가장 빈번한 오류: unclassified_model (62건)
+
+=================================================================
