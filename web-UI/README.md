@@ -90,7 +90,7 @@
 ## 실행 방법
 
 ```bash
-git clone https://github.com/Sogang-Capstone-2026-1/web-UI.git
+git clone https://github.com/capstonesignu/sign4u.git
 cd web-UI
 npm install
 npm run dev
