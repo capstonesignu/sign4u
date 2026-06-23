@@ -1,4 +1,4 @@
-# 메디손 (MediSone) — Frontend
+# 메디손 (Medisone) — Frontend
 
 > RAG 기반 한국 수어 번역 비대면 진료 서비스- 프론트엔드
 
