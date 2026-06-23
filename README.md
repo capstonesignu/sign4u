@@ -67,7 +67,7 @@
 
 - **서비스 데모**: [medisone.vercel.app](https://medisone.vercel.app) (도메인 표기는 `medisone`)
 
-> 📹 **데모 영상**: _(시연 영상 링크 추가 예정 — YouTube / Google Drive)_
+> 📹 **데모 영상**: https://drive.google.com/file/d/1uzLcZOOxGUr6Jf3wNw8zB82TU97NOYkm/view?usp=sharing
 
 ## 시스템 아키텍처
 
@@ -318,8 +318,6 @@ GPU 없이 CPU만으로 전체 파이프라인이 동작함을 확인했으며, 
 
 **멘토:** 박준혁 (SK hynix, 연구원) — 데모/발표 전략 및 RAG·벡터DB·sLLM 운영 지도
 
-## 시연 영상
-https://drive.google.com/file/d/1uzLcZOOxGUr6Jf3wNw8zB82TU97NOYkm/view?usp=sharing
 
 ## 감사의 글 / 소속
 
