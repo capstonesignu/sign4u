@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Secrets
+.env
+*.env
+!*.env.example
+
+# 대용량 모델 weight — GitHub 금지, HuggingFace/Release 로 배포
+*.gguf
+*.safetensors
+*.pt
+*.bin
+*.onnx
+sllm/base_model/
+sllm/merged_ckpt*/
+sllm/adapter/
+
+# 데이터 / 체크포인트 / 산출물 — git 제외
+dataset/
+result_*/
+encoder/
+db/
+db_staging/
+diagnostics/
+diagnostics_staging/
+*.faiss
+
+# node
+node_modules/
