@@ -1,0 +1,328 @@
+/* demo-desktop 전용 추가 스타일 */
+
+.db-wordlist-footer {
+  padding: 8px 10px;
+  border-top: 1px solid #3f3f46;
+  flex-shrink: 0;
+}
+
+.btn-download-all {
+  width: 100%;
+  background: #1e3a5f;
+  color: #93c5fd;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  padding: 6px 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+.btn-download-all:hover { background: #1d4ed8; color: #fff; }
+
+.db-wordlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.db-wordlist-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 단어 목록 통계 바 */
+.db-wordlist-stats {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 6px;
+  font-size: 11px;
+  color: #71717a;
+}
+.db-wordlist-stats .stat-sep { color: #3f3f46; }
+
+/* 단어 항목 녹화 수 badge */
+.db-rec-badge {
+  flex-shrink: 0;
+  background: #166534;
+  color: #86efac;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+.db-rec-badge.hidden { display: none; }
+
+/* 탭 버튼 총계 badge */
+.tab-count {
+  display: inline-block;
+  background: #1d4ed8;
+  color: #bfdbfe;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.tab-count.hidden { display: none; }
+
+.btn-kp-download {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #52525b;
+  font-size: 12px;
+  padding: 2px 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.db-wordlist-item:hover .btn-kp-download { opacity: 1; color: #93c5fd; }
+
+/* ── 녹화된 키포인트 패널 ─────────────────────────────────────────────────── */
+
+.db-recordings-panel {
+  margin-top: 8px;
+}
+
+.db-recordings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.db-recordings-header h2 {
+  margin: 0;
+  font-size: 13px;
+  color: #a1a1aa;
+}
+
+.db-recordings-list {
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.db-rec-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #1c1c1e;
+  flex-wrap: wrap;
+}
+
+.db-rec-label {
+  flex: 1;
+  font-size: 13px;
+  color: #e4e4e7;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.db-rec-count {
+  font-size: 11px;
+  color: #71717a;
+  flex-shrink: 0;
+}
+
+.db-rec-expand {
+  font-size: 11px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+}
+
+.db-rec-dl {
+  font-size: 11px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+}
+
+.db-rec-del-all {
+  font-size: 11px;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+.db-rec-files {
+  width: 100%;
+  margin-top: 2px;
+  padding: 2px 0 2px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid #3f3f46;
+}
+
+.db-rec-files.hidden { display: none; }
+
+.db-rec-file-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: #18181b;
+}
+
+.db-rec-filename {
+  flex: 1;
+  font-size: 11px;
+  color: #a1a1aa;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.db-rec-del-file {
+  font-size: 10px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+}
+
+/* ── 인식 테스트 패널 ────────────────────────────────────────────────────── */
+
+.rt-panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rt-db-info {
+  font-size: 11px;
+  font-weight: 400;
+  color: #52525b;
+}
+
+.rt-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.rt-frame-count {
+  font-size: 11px;
+  color: #71717a;
+  margin-left: 4px;
+}
+
+.rt-status {
+  font-size: 12px;
+  color: #a1a1aa;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+
+.rt-results {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-empty {
+  font-size: 12px;
+  color: #52525b;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.rt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #1c1c1e;
+}
+
+.rt-top1 {
+  background: #14532d;
+  outline: 1px solid #166534;
+}
+
+.rt-rank {
+  font-size: 11px;
+  color: #71717a;
+  width: 22px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.rt-top1 .rt-rank { color: #86efac; }
+
+.rt-word {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e4e4e7;
+  min-width: 64px;
+  flex-shrink: 0;
+}
+
+.rt-top1 .rt-word { color: #bbf7d0; font-size: 16px; }
+
+.rt-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: #27272a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rt-bar {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.rt-top1 .rt-bar { background: #4ade80; }
+
+.rt-score {
+  font-size: 11px;
+  color: #71717a;
+  width: 42px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.rt-top1 .rt-score { color: #86efac; }
+
+/* margin/reject 표시 */
+.rt-reject {
+  background: #422006;
+  border: 1px solid #b45309;
+  color: #fbbf24;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.rt-dim { opacity: 0.45; filter: grayscale(0.5); }
+.rt-margin {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #93c5fd;
+  background: #1e3a5f;
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+/* 인식 테스트 탭: app.js 자동 인식 카운트다운 오버레이만 숨김 (trigger-btn은 사용) */
+body[data-tab="test"] .start-overlay { display: none !important; }

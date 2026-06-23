@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSL Sign Language Demo</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- tasks-vision은 dynamic import로 로드 (mediapipe.js 내부) -->
+</head>
+<body class="db-tab">
+  <header>
+    <h1>KSL Sign Language Demo</h1>
+    <p class="subtitle">Korean Sign Language Recognition — Open Vocabulary</p>
+    <div class="header-actions" id="header-actions">
+      <!-- /me fetch로 채워짐 -->
+      <form method="post" action="/logout" style="display:inline">
+        <button type="submit" class="btn-logout">로그아웃</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Tab navigation -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="db">DB 녹화</button>
+  </nav>
+
+  <main>
+    <!-- 단어 목록 (가장 좌측) -->
+    <div class="db-wordlist-panel">
+      <div class="db-wordlist-header">단어 목록</div>
+      <input type="text" id="db-word-search" class="ref-word-search"
+             placeholder="단어 검색..." autocomplete="off" />
+      <div id="db-wordlist" class="db-wordlist">로딩 중...</div>
+    </div>
+
+    <section class="camera-section">
+      <div class="video-container">
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        <div id="rec-indicator" class="rec-indicator hidden">● REC</div>
+        <div id="frame-counter" class="frame-badge">0 frames</div>
+        <div id="trigger-btn" class="trigger-btn">
+          <span id="trigger-label">▶</span>
+          <div id="trigger-bar" class="trigger-bar"></div>
+        </div>
+        <!-- 1-second start countdown overlay -->
+        <div id="start-overlay" class="start-overlay hidden">
+          <svg class="countdown-svg" viewBox="0 0 56 56">
+            <circle class="countdown-track" cx="28" cy="28" r="22"/>
+            <circle class="countdown-ring" cx="28" cy="28" r="22"/>
+          </svg>
+        </div>
+        <!-- DB 녹화 모드 오버레이 -->
+        <div id="db-rec-overlay" class="db-rec-overlay db-only hidden">
+          <span class="db-rec-label">DB 녹화 모드</span>
+        </div>
+      </div>
+
+      <!-- Auto mode: hand detection indicator -->
+      <div id="hand-status" class="hand-status recognize-only">
+        <span id="hand-icon">✋</span>
+        <span id="hand-label">손을 들어 수화를 시작하세요</span>
+      </div>
+
+      <!-- Manual override buttons (인식 탭 전용) -->
+      <div class="controls recognize-only">
+        <button id="btn-record" class="btn btn-record" disabled>▶ 수동 시작</button>
+        <button id="btn-stop" class="btn btn-stop" disabled>■ 중지 &amp; 인식</button>
+        <label class="mode-toggle">
+          <input type="checkbox" id="chk-auto" checked>
+          <span>자동 감지</span>
+        </label>
+        <label class="mode-toggle">
+          <input type="checkbox" id="chk-word-mode">
+          <span>단어 모드</span>
+        </label>
+      </div>
+
+      <!-- DB 녹화 탭 안내 -->
+      <div class="db-mode-hint db-only hidden">
+        버튼에 손을 올리면 1초 후 시작/종료됩니다
+      </div>
+
+      <div id="status" class="status">MediaPipe 로딩 중...</div>
+      <div id="req-count" class="req-count-badge recognize-only">전송 0회</div>
+
+    </section>
+
+    <!-- Right: tab panels -->
+    <div class="right-panels">
+
+      <!-- 인식 탭 패널 -->
+      <div id="recognize-panel" class="tab-panel hidden">
+        <!-- Sentence result (new pipeline) -->
+        <div id="sentence-panel" class="result-panel sentence-panel hidden">
+          <h2>인식 결과</h2>
+          <div id="sentence-words" class="sentence-words"></div>
+          <div id="sentence-meta" class="sentence-meta"></div>
+        </div>
+
+        <!-- Single word Top-K result (legacy) -->
+        <div id="top1-panel" class="result-panel top1-panel hidden">
+          <h2>Top-1</h2>
+          <div class="top1-word" id="top1-word"></div>
+          <div class="top1-score-bar">
+            <div class="score-fill" id="top1-fill"></div>
+          </div>
+          <div class="top1-score" id="top1-score"></div>
+        </div>
+
+        <div id="top5-panel" class="result-panel hidden">
+          <h2>Top-5</h2>
+          <ol id="top5-list" class="result-list"></ol>
+        </div>
+
+        <div id="top10-panel" class="result-panel hidden">
+          <h2>Top-10</h2>
+          <ol id="top10-list" class="result-list"></ol>
+        </div>
+
+        <div id="placeholder" class="placeholder">
+          <p>손을 들어 수화를 하면 자동으로 인식합니다</p>
+        </div>
+      </div>
+
+      <!-- 인식 탭: 수어 참고 영상 -->
+      <div id="ref-section" class="result-panel ref-panel recognize-only">
+        <h2>수어 참고 영상</h2>
+        <input type="text" id="ref-word-search" class="ref-word-search"
+               placeholder="단어 검색..." autocomplete="off" />
+        <div id="ref-word-chips" class="ref-word-chips"></div>
+        <div class="ref-video-wrap">
+          <div id="ref-no-select" class="ref-no-select">단어를 클릭하면 수어 영상이 재생됩니다</div>
+          <div id="ref-video-wrap-inner" class="hidden">
+            <div id="ref-word-label" class="ref-word-label"></div>
+            <video id="ref-video-player" class="ref-video" controls playsinline></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- DB 녹화 탭 패널 -->
+      <div id="db-panel" class="tab-panel">
+
+        <!-- 녹화 & 확인 패널 -->
+        <div class="result-panel db-capture-panel">
+          <h2>단어 녹화</h2>
+
+          <!-- 선택된 단어 참고 영상 -->
+          <div id="db-ref-video-row" class="db-ref-video-row hidden">
+            <video id="db-ref-video" class="db-ref-video" controls playsinline loop></video>
+          </div>
+
+          <!-- 상태 메시지 -->
+          <div id="db-capture-status" class="db-capture-status">
+            버튼에 손을 올리면 1초 후 녹화가 시작됩니다
+          </div>
+
+          <!-- 영상 + 키포인트 오버레이 (캡처 후 표시) -->
+          <div id="db-preview-area" class="db-preview-area hidden">
+            <video id="db-preview-video" class="db-preview-video" playsinline muted></video>
+            <canvas id="db-kp-canvas" class="db-kp-canvas"></canvas>
+          </div>
+
+          <!-- 타임라인 자르기 도구 (캡처 후 표시) -->
+          <div id="db-timeline-wrap" class="db-timeline-wrap hidden">
+            <div class="db-timeline-header">
+              <span class="db-timeline-title">자르기 — 핸들을 드래그하세요</span>
+              <span id="db-timeline-info" class="db-timeline-info"></span>
+            </div>
+            <div id="db-timeline-outer" class="db-timeline-outer">
+              <canvas id="db-timeline-canvas" class="db-timeline-canvas" height="48"></canvas>
+              <div id="db-crop-region" class="db-crop-region"></div>
+              <div id="db-handle-start" class="db-handle db-handle-start" title="시작점">
+                <div class="db-handle-arrow">◀</div>
+              </div>
+              <div id="db-handle-end" class="db-handle db-handle-end" title="끝점">
+                <div class="db-handle-arrow">▶</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 재측정 / 재생 버튼 (캡처 후 표시) -->
+          <div id="db-action-row" class="db-action-row hidden">
+            <button id="btn-db-retake" class="btn btn-stop">다시 찍기</button>
+            <button id="btn-db-replay" class="btn btn-replay">▶ 다시 재생</button>
+          </div>
+
+          <!-- 싱크 조정 (캡처 후 표시) -->
+          <div id="db-sync-row" class="db-sync-row hidden">
+            <span class="db-sync-label">싱크 조정</span>
+            <button id="btn-sync-minus" class="btn btn-sync">−</button>
+            <span id="db-sync-val" class="db-sync-val">0 f</span>
+            <button id="btn-sync-plus" class="btn btn-sync">+</button>
+          </div>
+
+          <!-- 저장 / 다운로드 (캡처 후 표시) -->
+          <div id="db-save-form" class="db-save-form hidden">
+            <span id="db-save-word-display" class="db-save-word-display"></span>
+            <button id="btn-db-save" class="btn btn-db-save">DB에 저장</button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div id="server-info" class="server-info"></div>
+    </div>
+  </footer>
+
+  <script>
+    fetch("/me").then(r => r.ok ? r.json() : null).then(me => {
+      if (!me) return;
+      window._currentUser = me;
+      const actions = document.getElementById("header-actions");
+      if (me.is_admin) {
+        const a = document.createElement("a");
+        a.href = "/admin";
+        a.className = "btn-logout";
+        a.textContent = "계정 관리";
+        actions.insertBefore(a, actions.firstChild);
+      }
+      const span = document.createElement("span");
+      span.style.cssText = "font-size:0.75rem;color:#71717a;align-self:center";
+      span.textContent = me.username;
+      actions.insertBefore(span, actions.firstChild);
+    }).catch(() => {});
+  </script>
+  <script src="/js/interpolation.js?v=9"></script>
+  <script src="/js/mediapipe.js?v=9"></script>
+  <script src="/js/preprocessing.js?v=9"></script>
+  <script src="/js/ui.js?v=9"></script>
+  <script src="/js/app.js?v=9"></script>
+  <script src="/js/db_record.js?v=10"></script>
+</body>
+</html>

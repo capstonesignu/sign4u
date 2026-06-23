@@ -31,3 +31,4 @@ diagnostics_staging/
 
 # node
 node_modules/
+*.task

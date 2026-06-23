@@ -1,0 +1,17 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "sh -c 'uvicorn main:app --host 0.0.0.0 --port $PORT'"
+healthcheckPath = "/health"
+healthcheckTimeout = 15
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+# 환경변수 설정 필요 (Railway 대시보드 → Variables):
+#
+#   DATABASE_URL     = (Railway PostgreSQL에서 자동 주입)
+#   DATA_API_KEY     = (openssl rand -hex 32 으로 생성)
+#   JBEDU_VIDEO_ROOT = /data/videos   (Volume 연결 시)
+#   PORT             = 8002

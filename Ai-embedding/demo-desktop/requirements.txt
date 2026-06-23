@@ -1,0 +1,4 @@
+mediapipe==0.10.14
+opencv-python==4.10.0.84
+aiohttp==3.10.11
+python-dotenv>=1.0.0

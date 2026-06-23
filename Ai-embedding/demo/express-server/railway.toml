@@ -1,0 +1,15 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 15
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+# 환경변수 설정 필요 (Railway 대시보드 → Variables):
+#
+#   FASTAPI_URL = http://<fastapi-서비스명>.railway.internal:8001
+#                 (Railway 대시보드에서 FastAPI 서비스 이름 확인 후 설정)
+#   PORT        = 3000  (Railway가 자동 주입)
