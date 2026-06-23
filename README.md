@@ -318,9 +318,7 @@ GPU 없이 CPU만으로 전체 파이프라인이 동작함을 확인했으며, 
 **멘토:** 박준혁 (SK hynix, 연구원) — 데모/발표 전략 및 RAG·벡터DB·sLLM 운영 지도
 
 ## 시연 영상
-
-https://drive.google.com/file/d/1uzLcZOOxGUr6Jf3wNw8zB82TU97NOYkm/view?usp=drive_link
-
+https://drive.google.com/file/d/1uzLcZOOxGUr6Jf3wNw8zB82TU97NOYkm/view?usp=sharing
 
 ## 감사의 글 / 소속
 
