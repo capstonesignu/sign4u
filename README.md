@@ -315,10 +315,15 @@ GPU 없이 CPU만으로 전체 파이프라인이 동작함을 확인했으며, 
 | Jumagul Alua | 백엔드 — Node.js 서버, OAuth·JWT 인증, REST API 35종, WebSocket 릴레이, PostgreSQL 설계, Railway 배포 | `web-Backend` |
 | Shunn Lae Ko Ko Aye | 프론트엔드 — Figma UI/UX, React 화면, MediaPipe·WebRTC 연동, Web Speech API STT, Vercel 배포 | `web-UI` |
 
-**멘토:** 박주혁 (SK hynix, 연구원) — 데모/발표 전략 및 RAG·벡터DB·sLLM 운영 지도
+**멘토:** 박준혁 (SK hynix, 연구원) — 데모/발표 전략 및 RAG·벡터DB·sLLM 운영 지도
+
+## 시연 영상
+
+https://drive.google.com/file/d/1uzLcZOOxGUr6Jf3wNw8zB82TU97NOYkm/view?usp=drive_link
+
 
 ## 감사의 글 / 소속
 
 본 프로젝트는 **서강대학교 SW중심대학사업단 캡스톤디자인** (담당교수 **장두성**, 2026-1학기) 교과목의 일환으로 수행되었습니다.
 
-서비스 데모·발표 전략과 RAG·벡터DB·sLLM 운영 전반에 걸쳐 지도해 주신 기업 멘토 **박주혁 연구원(SK hynix)** 께 깊이 감사드립니다.
+서비스 데모·발표 전략과 RAG·벡터DB·sLLM 운영 전반에 걸쳐 지도해 주신 기업 멘토 **박준혁 연구원(SK hynix)** 께 깊이 감사드립니다.
