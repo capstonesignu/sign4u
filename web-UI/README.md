@@ -124,7 +124,3 @@ src/
 ```
 
 ---
-
-## 관련 레포
-
-- [MediSone 팀 GitHub](https://github.com/Sogang-Capstone-2026-1)
